@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The home page of JIEYI.1</title>
+    <style>
+        /* 基础重置与字体 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        /* 背景设置（保持原背景不变） */
+        body {
+            background: url('https://jeiii.cn/img/030.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        /* 半透明遮罩层 */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: -1;
+        }
+        
+        /* 主容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        /* 导航栏 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2A5CAA;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2A5CAA;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #2A5CAA;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* 主要内容区 */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #222;
+            line-height: 1.2;
+            animation: slideUp 1s ease-out;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: slideUp 1s 0.2s ease-out both;
+        }
+        
+        /* 卡片区域 */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card h3 {
+            color: #2A5CAA;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .card p {
+            color: #666;
+        }
+        
+        /* 按钮样式 */
+        .btn {
+            display: inline-block;
+            background: #2A5CAA;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: #2A5CAA;
+            border-color: #2A5CAA;
+            transform: translateY(-3px);
+        }
+        
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            color: #777;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">JIEYI'S BLOG</a>
+            <div class="nav-links">
+                <a href="#">HOMEPAGE</a>
+                <a href="#">ABOUT</a>
+            </div>
+        </nav>
+        
+        <section class="hero">
+            <h1>JIEYI'S PERSONAL LEARNING BLOG</h1>
+            <p class="subtitle">—— Every hour you spend learning today builds a brighter tomorrow.</p>
+            <a href="#" class="btn">Website Navigation</a>
+        </section>
+        
+        <div class="card-container">
+            <div class="card">
+                <h3>MY GITHUB</h3>
+                <p>学习笔记存 GitHub，公开分享促交流，私有设置保隐私，满足多样需求。</p>
+                <a href="#" class="btn">ENTER</a>
+            </div>
+            <div class="card">
+                <h3>TOOLBOX</h3>
+                <p>一站式解锁学习工具，写教程，开启高效学习，让知识梳理易如反掌。</p>
+                <a href="#" class="btn">ENTER</a>
+            </div>
+            <div class="card">
+                <h3>SOCIAL MEDIA</h3>
+                <p>无聊星球发出求救信号，速来我的社交圈领取救援物资。</p>
+                <a href="#" class="btn">ENTER</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Copyright ©2025 JIEYI. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
