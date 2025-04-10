@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The home page of JIEYI</title>
+    <title>Website Navigation | JIEYI'S BLOG</title>
     <style>
         /* 基础重置与字体 */
         * {
@@ -121,56 +121,49 @@
             animation: slideUp 1s 0.2s ease-out both;
         }
         
-        /* 卡片区域 */
-        .card-container {
+        /* 按钮网格区域 */
+        .buttons-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
             margin: 3rem 0;
         }
         
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-        }
-        
-        .card h3 {
-            color: #2A5CAA;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .card p {
-            color: #666;
-        }
-        
         /* 按钮样式 */
-        .btn {
+        .nav-btn {
             display: inline-block;
             background: #2A5CAA;
             color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
-            margin-top: 1rem;
+            text-align: center;
             transition: all 0.3s;
             border: 2px solid transparent;
+            font-size: 0.9rem;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .btn:hover {
+        .nav-btn:hover {
             background: transparent;
             color: #2A5CAA;
             border-color: #2A5CAA;
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 分类标题 */
+        .category-title {
+            grid-column: 1 / -1;
+            color: #2A5CAA;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #2A5CAA;
         }
         
         /* 页脚 */
@@ -209,7 +202,13 @@
                 font-size: 2.5rem;
             }
             
-            .card-container {
+            .buttons-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .buttons-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -218,7 +217,7 @@
 <body>
     <div class="container">
         <nav>
-            <a href="#" class="logo">JIEYI'S BLOG</a>
+            <a href="index.html" class="logo">JIEYI'S BLOG</a>
             <div class="nav-links">
                 <a href="index.html">HOMEPAGE</a>
                 <a href="#">ABOUT</a>
@@ -226,27 +225,70 @@
         </nav>
         
         <section class="hero">
-            <h1>JIEYI'S PERSONAL LEARNING BLOG</h1>
-            <p class="subtitle">—— Every hour you spend learning today builds a brighter tomorrow.</p>
-            <a href="Website Navigation.html" class="btn">Website Navigation</a>
+            <h1>WEBSITE NAVIGATION</h1>
+            <p class="subtitle">—— Quick access to all your important resources</p>
         </section>
         
-        <div class="card-container">
-            <div class="card">
-                <h3>MY GITHUB</h3>
-                <p>学习笔记存 GitHub，公开分享促交流，私有设置保隐私，满足多样需求。</p>
-                <a href="#" class="btn">ENTER</a>
-            </div>
-            <div class="card">
-                <h3>TOOLBOX</h3>
-                <p>一站式解锁学习工具，写教程，开启高效学习，让知识梳理易如反掌。</p>
-                <a href="#" class="btn">ENTER</a>
-            </div>
-            <div class="card">
-                <h3>SOCIAL MEDIA</h3>
-                <p>无聊星球发出求救信号，速来我的社交圈领取救援物资。</p>
-                <a href="#" class="btn">ENTER</a>
-            </div>
+        <div class="buttons-grid">
+            <h3 class="category-title">Learning Resources</h3>
+            <a href="#" class="nav-btn">Online Courses</a>
+            <a href="#" class="nav-btn">Programming Docs</a>
+            <a href="#" class="nav-btn">Tech Blogs</a>
+            <a href="#" class="nav-btn">E-books</a>
+            <a href="#" class="nav-btn">Tutorials</a>
+            <a href="#" class="nav-btn">Coding Challenges</a>
+            <a href="#" class="nav-btn">Video Lectures</a>
+            <a href="#" class="nav-btn">Research Papers</a>
+            <a href="#" class="nav-btn">Study Groups</a>
+            <a href="#" class="nav-btn">Learning Plans</a>
+            
+            <h3 class="category-title">Development Tools</h3>
+            <a href="#" class="nav-btn">Code Editors</a>
+            <a href="#" class="nav-btn">Version Control</a>
+            <a href="#" class="nav-btn">API Tools</a>
+            <a href="#" class="nav-btn">Cloud Services</a>
+            <a href="#" class="nav-btn">Database Tools</a>
+            <a href="#" class="nav-btn">Debugging</a>
+            <a href="#" class="nav-btn">Package Managers</a>
+            <a href="#" class="nav-btn">Testing Tools</a>
+            <a href="#" class="nav-btn">CI/CD</a>
+            <a href="#" class="nav-btn">Containerization</a>
+            
+            <h3 class="category-title">Design Resources</h3>
+            <a href="#" class="nav-btn">UI Inspiration</a>
+            <a href="#" class="nav-btn">Color Palettes</a>
+            <a href="#" class="nav-btn">Stock Photos</a>
+            <a href="#" class="nav-btn">Icons</a>
+            <a href="#" class="nav-btn">Fonts</a>
+            <a href="#" class="nav-btn">Prototyping</a>
+            <a href="#" class="nav-btn">Illustrations</a>
+            <a href="#" class="nav-btn">Design Systems</a>
+            <a href="#" class="nav-btn">3D Assets</a>
+            <a href="#" class="nav-btn">Design Tools</a>
+            
+            <h3 class="category-title">Productivity</h3>
+            <a href="#" class="nav-btn">Note Taking</a>
+            <a href="#" class="nav-btn">Task Management</a>
+            <a href="#" class="nav-btn">Time Tracking</a>
+            <a href="#" class="nav-btn">Collaboration</a>
+            <a href="#" class="nav-btn">Calendar</a>
+            <a href="#" class="nav-btn">Bookmarks</a>
+            <a href="#" class="nav-btn">Password Manager</a>
+            <a href="#" class="nav-btn">VPN Services</a>
+            <a href="#" class="nav-btn">File Storage</a>
+            <a href="#" class="nav-btn">Automation</a>
+            
+            <h3 class="category-title">Social & Community</h3>
+            <a href="#" class="nav-btn">GitHub</a>
+            <a href="#" class="nav-btn">LinkedIn</a>
+            <a href="#" class="nav-btn">Twitter</a>
+            <a href="#" class="nav-btn">Dev Community</a>
+            <a href="#" class="nav-btn">Stack Overflow</a>
+            <a href="#" class="nav-btn">Discord</a>
+            <a href="#" class="nav-btn">Slack</a>
+            <a href="#" class="nav-btn">Reddit</a>
+            <a href="#" class="nav-btn">Meetups</a>
+            <a href="#" class="nav-btn">Blog</a>
         </div>
         
         <footer>
